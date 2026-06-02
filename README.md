@@ -6,7 +6,7 @@
 
 ## Preview
 
-https://github.com/liamzy2021/Obsidian--Modular-Theme-Dashboard-Free-Drag-and-Drop/issues/1#issue-4567698191
+<img width="1905" height="1358" alt="Image" src="https://github.com/user-attachments/assets/09b4854a-7281-4c7c-bfc0-fdd7336e0230" />
 
 
 ## Features
