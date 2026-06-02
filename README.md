@@ -1,4 +1,109 @@
 # Modular Theme Dashboard - Obsidian Dashboard Plugin
+## Installation
+
+### From GitHub (Manual)
+
+1. Go to [Releases](https://github.com/liamzy2021/Obsidian--Modular-Theme-Dashboard-Free-Drag-and-Drop/releases) and download the latest `main.js`, `manifest.json`, `styles.css` and `assets/` folder
+2. Create a folder named `ai-smart-dashboard-v15` in your Obsidian vault's `.obsidian/plugins/` directory
+3. Copy all downloaded files into this folder, maintaining the structure:
+   ```
+   .obsidian/plugins/ai-smart-dashboard-v15/
+   ├── main.js
+   ├── manifest.json
+   ├── styles.css
+   ├── assets/
+   │   └── donate-qrcode.png
+   └── modules/
+       ├── ai-insight.js
+       ├── calendar.js
+       ├── directory.js
+       ├── news.js
+       ├── recent.js
+       ├── stats.js
+       ├── todo.js
+       ├── weather.js
+       ├── web-preview.js
+       └── web-video.js
+   ```
+4. Restart Obsidian or reload plugins
+5. Go to Settings → Community Plugins → Enable "Modular Theme Dashboard"
+
+### From Obsidian Community Plugins
+
+1. Open Settings → Community Plugins → Browse
+2. Search for "Modular Theme Dashboard"
+3. Click Install, then Enable
+
+## Usage
+
+- **打开仪表盘** — 左侧边栏点击 🏠 图标，或通过命令面板搜索 "Modular Theme Dashboard"
+- **拖拽卡片** — 按住卡片标题栏拖拽到目标位置
+- **调整大小** — 拖动卡片右下角调整宽高
+- **添加新实例** — 点击顶部 `➕` 按钮，选择要添加的模块
+- **切换主题** — 点击顶部 `🎨` 按钮，从 8 款主题中选择
+- **模块设置** — 通过顶部 `⚙️` 按钮 → 滚动到对应模块区域，或通过 Obsidian 设置面板
+
+## Configuration
+
+Each module has its own settings section. Key configurations:
+
+| Module | Key Settings |
+|--------|-------------|
+| 天气 | 城市、高德 API Key |
+| AI 洞察 | API URL、API Key、模型名称、温度参数、请求延迟 |
+| 网页预览 | 默认 URL、缩放比例、X/Y 偏移 |
+| 网页视频 | 默认 URL、缩放比例、X/Y 偏移 |
+| 待办事项 | 存储文件夹路径 |
+| 目录 | 显示的根目录列表 |
+
+Global settings:
+- **主题选择** — 8 款预设主题
+- **卡片背景色** — 自定义卡片背景色 + 透明度
+- **显示/隐藏顶部栏** — 控制顶部工具栏显示
+- **模块开关** — 启用/禁用每个模块
+- **模块排序** — 拖拽调整模块显示顺序
+
+## Architecture
+
+```
+ai-dashboard-v15/
+├── main.js              # 插件入口（Plugin + DashboardView + ModuleManager）
+├── manifest.json        # Obsidian 插件清单
+├── styles.css           # 全局样式 + 各模块基础样式
+├── assets/
+│   └── donate-qrcode.png
+└── modules/
+    ├── weather.js       # 天气模块（高德 API）
+    ├── calendar.js      # 日历模块（农历/节气/节日）
+    ├── stats.js         # 统计模块（笔记统计/文件夹排行）
+    ├── todo.js          # 待办模块（CRUD + Markdown 持久化）
+    ├── recent.js        # 最近文件模块
+    ├── news.js          # 资讯模块（AI HOT RSS）
+    ├── directory.js     # 目录模块（树形目录）
+    ├── ai-insight.js    # AI 洞察模块（OpenAI 兼容 API）
+    ├── web-preview.js   # 网页预览模块（iframe 三层缩放）
+    └── web-video.js     # 网页视频模块（webview 三层缩放）
+```
+
+### Core Design
+
+- **`ModuleManager`** — 动态扫描 `modules/` 目录，通过 `new Function()` + `with(_runtimeCtx)` 注入 Obsidian API 上下文并执行模块代码
+- **`DashboardView`** — 基于 `ItemView` 的自由布局视图，管理卡片渲染、拖拽、缩放、主题切换
+- **模块接口** — 每个模块导出标准接口 `{ id, title, icon, defaultSettings, styles, render, renderSettings }`
+- **实例系统** — `settings.instances[]` 数组存储所有实例信息，`settings.modules[instanceId]` 存储实例独立配置
+
+## Requirements
+
+- Obsidian **0.15.0** or later
+- Desktop app recommended (web-view module requires Electron)
+- Weather module requires [Amap (高德) API Key](https://lbs.amap.com/)
+- AI Insight module requires an OpenAI-compatible API endpoint
+
+## License
+
+MIT
+
+## Author
 
 > 一款功能丰富的 Obsidian 仪表盘插件，提供自由拖拽布局、10 个功能模块、8 款精美主题，以及无限实例化能力。
 
@@ -115,110 +220,6 @@
 
 支持通过顶部工具栏一键切换主题，也可在设置中自定义卡片背景色和透明度。
 
-## Installation
 
-### From GitHub (Manual)
-
-1. Go to [Releases](https://github.com/liamzy2021/Obsidian--Modular-Theme-Dashboard-Free-Drag-and-Drop/releases) and download the latest `main.js`, `manifest.json`, `styles.css` and `assets/` folder
-2. Create a folder named `ai-smart-dashboard-v15` in your Obsidian vault's `.obsidian/plugins/` directory
-3. Copy all downloaded files into this folder, maintaining the structure:
-   ```
-   .obsidian/plugins/ai-smart-dashboard-v15/
-   ├── main.js
-   ├── manifest.json
-   ├── styles.css
-   ├── assets/
-   │   └── donate-qrcode.png
-   └── modules/
-       ├── ai-insight.js
-       ├── calendar.js
-       ├── directory.js
-       ├── news.js
-       ├── recent.js
-       ├── stats.js
-       ├── todo.js
-       ├── weather.js
-       ├── web-preview.js
-       └── web-video.js
-   ```
-4. Restart Obsidian or reload plugins
-5. Go to Settings → Community Plugins → Enable "Modular Theme Dashboard"
-
-### From Obsidian Community Plugins
-
-1. Open Settings → Community Plugins → Browse
-2. Search for "Modular Theme Dashboard"
-3. Click Install, then Enable
-
-## Usage
-
-- **打开仪表盘** — 左侧边栏点击 🏠 图标，或通过命令面板搜索 "Modular Theme Dashboard"
-- **拖拽卡片** — 按住卡片标题栏拖拽到目标位置
-- **调整大小** — 拖动卡片右下角调整宽高
-- **添加新实例** — 点击顶部 `➕` 按钮，选择要添加的模块
-- **切换主题** — 点击顶部 `🎨` 按钮，从 8 款主题中选择
-- **模块设置** — 通过顶部 `⚙️` 按钮 → 滚动到对应模块区域，或通过 Obsidian 设置面板
-
-## Configuration
-
-Each module has its own settings section. Key configurations:
-
-| Module | Key Settings |
-|--------|-------------|
-| 天气 | 城市、高德 API Key |
-| AI 洞察 | API URL、API Key、模型名称、温度参数、请求延迟 |
-| 网页预览 | 默认 URL、缩放比例、X/Y 偏移 |
-| 网页视频 | 默认 URL、缩放比例、X/Y 偏移 |
-| 待办事项 | 存储文件夹路径 |
-| 目录 | 显示的根目录列表 |
-
-Global settings:
-- **主题选择** — 8 款预设主题
-- **卡片背景色** — 自定义卡片背景色 + 透明度
-- **显示/隐藏顶部栏** — 控制顶部工具栏显示
-- **模块开关** — 启用/禁用每个模块
-- **模块排序** — 拖拽调整模块显示顺序
-
-## Architecture
-
-```
-ai-dashboard-v15/
-├── main.js              # 插件入口（Plugin + DashboardView + ModuleManager）
-├── manifest.json        # Obsidian 插件清单
-├── styles.css           # 全局样式 + 各模块基础样式
-├── assets/
-│   └── donate-qrcode.png
-└── modules/
-    ├── weather.js       # 天气模块（高德 API）
-    ├── calendar.js      # 日历模块（农历/节气/节日）
-    ├── stats.js         # 统计模块（笔记统计/文件夹排行）
-    ├── todo.js          # 待办模块（CRUD + Markdown 持久化）
-    ├── recent.js        # 最近文件模块
-    ├── news.js          # 资讯模块（AI HOT RSS）
-    ├── directory.js     # 目录模块（树形目录）
-    ├── ai-insight.js    # AI 洞察模块（OpenAI 兼容 API）
-    ├── web-preview.js   # 网页预览模块（iframe 三层缩放）
-    └── web-video.js     # 网页视频模块（webview 三层缩放）
-```
-
-### Core Design
-
-- **`ModuleManager`** — 动态扫描 `modules/` 目录，通过 `new Function()` + `with(_runtimeCtx)` 注入 Obsidian API 上下文并执行模块代码
-- **`DashboardView`** — 基于 `ItemView` 的自由布局视图，管理卡片渲染、拖拽、缩放、主题切换
-- **模块接口** — 每个模块导出标准接口 `{ id, title, icon, defaultSettings, styles, render, renderSettings }`
-- **实例系统** — `settings.instances[]` 数组存储所有实例信息，`settings.modules[instanceId]` 存储实例独立配置
-
-## Requirements
-
-- Obsidian **0.15.0** or later
-- Desktop app recommended (web-view module requires Electron)
-- Weather module requires [Amap (高德) API Key](https://lbs.amap.com/)
-- AI Insight module requires an OpenAI-compatible API endpoint
-
-## License
-
-MIT
-
-## Author
 
 **栗子仁儿**
