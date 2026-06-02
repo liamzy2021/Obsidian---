@@ -1,4 +1,4 @@
-# Obsidian---
+# Obsidian插件-模块化仪表盘主页（自由拖拽，自由组合）
 Obsidian插件-模块化仪表盘主页（自由拖拽，自由组合）
 # 主页 - Obsidian Dashboard Plugin
 
