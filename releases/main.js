@@ -1107,8 +1107,36 @@ class DashboardSettingTab extends PluginSettingTab {
             attr: { style: 'text-align:center;margin-bottom:12px;' }
         });
 
-        // 打赏二维码（图床外链）
-        const qrSrc = 'https://img-reg-ab.imagency.cn/e/19467f4b916c082ee6ef3b9d81aa9ecb.png';
+        // 加载二维码图片
+        let qrSrc = '';
+        try {
+            const nodePath = require('path');
+            const fs = require('fs');
+            const adapter = this.app.vault.adapter;
+            const vaultBase = adapter.basePath || adapter.getBasePath?.() || '';
+            const relDir = (this.plugin.manifest.dir || '').replace(/\\/g, '/').replace(/^\//, '');
+
+            const candidates = [
+                nodePath.join(vaultBase, relDir, 'assets', 'donate-qrcode.png'),
+                nodePath.join(vaultBase, '.obsidian', 'plugins', 'ai-smart-dashboard-v15', 'assets', 'donate-qrcode.png'),
+            ];
+            if (nodePath.isAbsolute(relDir || '')) {
+                candidates.unshift(nodePath.join(relDir, 'assets', 'donate-qrcode.png'));
+            }
+
+            let foundPath = '';
+            for (const p of candidates) {
+                if (p && fs.existsSync(p)) { foundPath = p; break; }
+            }
+            console.log('[V16 Donate] 找到路径:', foundPath || '未找到', '候选:', candidates);
+
+            if (foundPath) {
+                const buf = fs.readFileSync(foundPath);
+                qrSrc = 'data:image/png;base64,' + buf.toString('base64');
+            }
+        } catch (e) {
+            console.error('[V16] 加载打赏二维码失败:', e);
+        }
 
         const qrWrap = section.createDiv({
             attr: { style: 'text-align:center;' }
