@@ -8,10 +8,10 @@ Obsidian插件-模块化仪表盘主页（自由拖拽，自由组合）
 
 ## Preview
 
-```
+
 [<img width="2199" height="1360" alt="image" src="https://github.com/user-attachments/assets/9255bbe6-96c3-465b-8921-2b82c755aa51" />](https://private-user-images.githubusercontent.com/88437884/601281614-09b4854a-7281-4c7c-bfc0-fdd7336e0230.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODAzNjU0MjgsIm5iZiI6MTc4MDM2NTEyOCwicGF0aCI6Ii84ODQzNzg4NC82MDEyODE2MTQtMDliNDg1NGEtNzI4MS00YzdjLWJmYzAtZmRkNzMzNmUwMjMwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjAyVDAxNTIwOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZjZmQ0MDBkNDRhZTE4MzFmNGZkZTFiOWE2M2EwYjA5ZjI3NmU5NWYyNWY2YmNmNzVkODg3NGIyMDNlNzYzMTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.QaO_QcPJ9dfJwHiD3nqR3sfiLHqMkEWhLmlNwU31YYE)
 
-```
+
 
 ## Features
 
