@@ -6,33 +6,7 @@
 
 ## Preview
 
-```
-+----------------------------------------------------------+
-|  🏠 Modular Theme Dashboard  [➕ 添加板块] [🎨 主题] [🔄 刷新] [⚙️]  |
-+----------------------------------------------------------+
-|                                                          |
-|  +----------+  +----------+  +----------+  +----------+   |
-|  | 🌤️ 天气  |  | 📅 日历  |  | 📈 统计  |  | ✅ 待办  |   |
-|  |          |  |          |  |          |  |          |   |
-|  | 实时天气  |  | 农历日历  |  | 笔记统计  |  | 增删改查  |   |
-|  | 3天预报   |  | 节日节气  |  | 文件排行  |  | 进度追踪  |   |
-|  +----------+  +----------+  +----------+  +----------+   |
-|                                                          |
-|  +----------+  +----------+  +----------+  +----------+   |
-|  | 🕐 最近  |  | 🔥 资讯  |  | 📂 目录  |  | 💡 AI   |   |
-|  |          |  |          |  |          |  |          |   |
-|  | 最近修改  |  | 热点新闻  |  | 树形目录  |  | AI 洞察  |   |
-|  | 点击打开  |  | 分页浏览  |  | 快速导航  |  | 智能分析  |   |
-|  +----------+  +----------+  +----------+  +----------+   |
-|                                                          |
-|  +-------------------+  +-------------------+            |
-|  | 🌐 网页预览       |  | 📺 网页视频       |            |
-|  |                   |  |                   |            |
-|  | 内嵌网页浏览器    |  | 内嵌视频播放器    |            |
-|  | 缩放 / 平移 / 刷新|  | 缩放 / 平移 / 刷新|            |
-|  +-------------------+  +-------------------+            |
-+----------------------------------------------------------+
-```
+https://private-user-images.githubusercontent.com/88437884/601281614-09b4854a-7281-4c7c-bfc0-fdd7336e0230.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODAzNjgzNjIsIm5iZiI6MTc4MDM2ODA2MiwicGF0aCI6Ii84ODQzNzg4NC82MDEyODE2MTQtMDliNDg1NGEtNzI4MS00YzdjLWJmYzAtZmRkNzMzNmUwMjMwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjAyVDAyNDEwMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWExY2JkNWFmYzE4M2ViNWMxNWFmNmRjNDljNjY3ZGU4ZTdhNjQ0MTI1NTI4OGUyYzExYzEzMTMwZmRhMzEwZTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.GG4QddzVejKJecssZdQ4hjGOL-iDOT7I21s-VP2KCMI
 
 ## Features
 
