@@ -11,7 +11,7 @@
 
 > A free-layout Obsidian dashboard with 25 widgets, 8 themes, 9+ file viewers, and AI-powered multi-language translation — drag, drop, and make it yours.
 
-**V17.0.8** — Now with **AI Custom Language**: translate the entire interface into any human language or local dialect using your favorite AI model. Japanese, Russian, Cantonese, Sichuanese, Klingon... if your AI can speak it, the dashboard can display it.
+**V17.1.1** — Two major updates: **PPT / PPT File Viewer** (full support for `.ppt` and `.pptx` with smart text extraction) and **Multi-Platform Weather Module** (5 providers: Amap, Open-Meteo, wttr.in, OpenWeatherMap + custom URL template). Global weather coverage, free and unlimited for most providers.
 
 ---
 
@@ -74,7 +74,7 @@ All modules are built in — no extra downloads, no dependencies to chase. Insta
 
 | Module | What It Does |
 |--------|-------------|
-| Weather | Real-time weather + 3-day forecast (Amap API) |
+| Weather | Real-time weather + 3-day forecast (5 providers: Amap, Open-Meteo, wttr.in, OpenWeatherMap, Custom) |
 | Calendar | Lunar calendar with solar terms, holidays, monthly navigation |
 | Stats | Note count, word count, folder stats, Top 5 folders |
 | To-Do | Full CRUD with filters, progress tracking, Markdown persistence |
@@ -119,6 +119,7 @@ Open files directly in the dashboard — no need to leave Obsidian:
 |--------|---------|
 | Spreadsheets | `.xlsx`, `.xls`, `.csv` (SheetJS rendering) |
 | Word Documents | `.docx` (mammoth.js), `.doc` (CFB parser) |
+| PowerPoint | `.pptx` (JSZip + XML text extraction), `.ppt` (OLE2 binary parser with UTF-16LE/ASCII dual-scan) |
 | Code & Text | `.html`, `.txt`, `.json`, `.js`, and more |
 | Images | `.png`, `.jpg`, `.gif`, `.webp` |
 | Video | `.mp4`, `.webm` |
@@ -187,7 +188,7 @@ Switch themes from the top toolbar, or customize card background color and opaci
 
 | Module | Key Settings |
 |--------|-------------|
-| Weather | City, Amap API Key |
+| Weather | Provider, City, API Key (Amap/OWM), Custom URL template |
 | AI Insight | API URL, API Key, Model, Temperature, Delay |
 | AI Language | API URL, API Key, Model, Target Language |
 | Web Preview | Default URL, Zoom, X/Y Offset |
@@ -203,7 +204,7 @@ Switch themes from the top toolbar, or customize card background color and opaci
 
 - Obsidian **0.15.0** or later
 - Desktop app recommended (web preview/video modules use Electron)
-- Weather module: [Amap API Key](https://lbs.amap.com/)
+- Weather module: [Amap API Key](https://lbs.amap.com/) (optional — Open-Meteo and wttr.in work without any key)
 - AI modules: OpenAI-compatible API endpoint
 
 ---
@@ -247,7 +248,7 @@ If you enjoy this plugin, a star on GitHub means the world:
 
 > 一款自由拖拽的 Obsidian 仪表盘插件，内置 25 个功能模块、8 款精美主题、9+ 种文件查看器，以及 AI 驱动的多语言翻译——随心摆放，你的桌面你做主。
 
-**V17.0.8** — 全新 **AI 自定义语言**功能：用你喜欢的 AI 模型将整个插件界面翻译成任意语言或方言。日语、俄语、粤语、四川话、克林贡语……AI 能说啥，仪表盘就能显示啥。
+**V17.1.1** — 两大重要更新：**PPT / PPT 文件查看器**（完整支持 `.ppt` 和 `.pptx` 格式，智能文本提取）和 **天气模块多平台国际化升级**（5 大平台：高德、Open-Meteo、wttr.in、OpenWeatherMap + 自定义 URL 模板）。覆盖全球天气数据，大部分平台免费无限使用。
 
 ---
 
@@ -309,7 +310,7 @@ If you enjoy this plugin, a star on GitHub means the world:
 
 | 模块 | 功能说明 |
 |------|---------|
-| 天气 | 实时天气 + 未来 3 天预报（高德 API） |
+| 天气 | 实时天气 + 未来 3 天预报（5 大平台：高德、Open-Meteo、wttr.in、OpenWeatherMap、自定义） |
 | 日历 | 农历万年历，节气、节日标注，月历翻页 |
 | 笔记统计 | 笔记总数、总字数、文件夹统计、Top 5 文件夹 |
 | 待办事项 | 完整增删改查，三种筛选模式，进度追踪，Markdown 持久化 |
@@ -354,6 +355,7 @@ If you enjoy this plugin, a star on GitHub means the world:
 |------|------|
 | 表格 | `.xlsx`、`.xls`、`.csv`（SheetJS 完整渲染） |
 | Word 文档 | `.docx`（mammoth.js）、`.doc`（CFB 解析） |
+| PowerPoint | `.pptx`（JSZip + XML 文本提取）、`.ppt`（OLE2 二进制解析器，UTF-16LE/ASCII 双重扫描） |
 | 代码与文本 | `.html`、`.txt`、`.json`、`.js` 等 |
 | 图片 | `.png`、`.jpg`、`.gif`、`.webp` |
 | 视频 | `.mp4`、`.webm` |
@@ -422,7 +424,7 @@ If you enjoy this plugin, a star on GitHub means the world:
 
 | 模块 | 关键设置 |
 |------|---------|
-| 天气 | 城市、高德 API Key |
+| 天气 | 平台选择、城市、API Key（高德/OWM）、自定义 URL 模板 |
 | AI 洞察 | API URL、API Key、模型、温度参数、请求延迟 |
 | AI 语言 | API URL、API Key、模型、目标语言 |
 | 网页预览 | 默认 URL、缩放比例、XY 偏移 |
@@ -438,7 +440,7 @@ If you enjoy this plugin, a star on GitHub means the world:
 
 - Obsidian **0.15.0** 或更高版本
 - 推荐桌面端使用（网页预览/视频模块依赖 Electron）
-- 天气模块需要[高德地图 API Key](https://lbs.amap.com/)
+- 天气模块可选：[高德地图 API Key](https://lbs.amap.com/)（也可使用 Open-Meteo 或 wttr.in，无需任何 API Key）
 - AI 模块需要 OpenAI 兼容的 API 接口
 
 ---
