@@ -137,11 +137,11 @@ Toggle each format on/off in Settings. Disabled formats fall back to your system
 
 #### Image Gallery (```t)
 
-```markdown
+````markdown
 ```t
 /path/to/images|horizontal|4|200|0|0|10|12|true
 ```
-```
+````
 
 **Quick format** (pipe-separated):
 
@@ -176,11 +176,11 @@ smartcenter: true
 
 #### Media Gallery (``s)
 
-```markdown
+````markdown
 ```s
 /path/to/media|grid|220|10|10|12|true
 ```
-```
+````
 
 **Quick format** (pipe-separated):
 
@@ -450,11 +450,11 @@ If you enjoy this plugin, you can buy me a coffee:
 
 #### 图片画廊（```t）
 
-````markdown
+`````markdown
 ```t
 /path/to/images|horizontal|4|200|0|0|10|12|true
 ```
-````
+`````
 
 **快速格式**（管道分隔）：
 
@@ -489,11 +489,11 @@ smartcenter: true
 
 #### 媒体画廊（```s）
 
-````markdown
+`````markdown
 ```s
 /path/to/media|grid|220|10|10|12|true
 ```
-````
+`````
 
 **快速格式**（管道分隔）：
 
