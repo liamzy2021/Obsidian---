@@ -1,7 +1,7 @@
 <p align="center">
   <a href="#modular-theme-dashboard">English</a> &nbsp;|&nbsp;
   <a href="#中文说明">中文</a> &nbsp;|&nbsp;
-  <a href="#-support"><img src="https://img.shields.io/badge/☕-Donate-orange?style=flat-square" /></a>
+  <a href="#-support"><img src="https://img.shields.io/badge/⭐-Support-brightgreen?style=flat-square" /></a>
   <a href="#打赏"><img src="https://img.shields.io/badge/💰-打赏-red?style=flat-square" /></a>
 </p>
 
@@ -11,7 +11,7 @@
 
 > A free-layout Obsidian dashboard with 25 widgets, 8 themes, 9+ file viewers, and AI-powered multi-language translation — drag, drop, and make it yours.
 
-**V17.1.1** — Two major updates: **PPT / PPT File Viewer** (full support for `.ppt` and `.pptx` with smart text extraction) and **Multi-Platform Weather Module** (5 providers: Amap, Open-Meteo, wttr.in, OpenWeatherMap + custom URL template). Global weather coverage, free and unlimited for most providers.
+**V17** — Two major updates: **PPT / PPT File Viewer** (full support for `.ppt` and `.pptx` with smart text extraction) and **Multi-Platform Weather Module** (5 providers: Amap, Open-Meteo, wttr.in, OpenWeatherMap + custom URL template). Global weather coverage, free and unlimited for most providers.
 
 ---
 
@@ -307,13 +307,17 @@ MIT
 
 ---
 
-## ☕ Support
+## ⭐ Support
 
-If you enjoy this plugin, you can buy me a coffee:
+If you enjoy this plugin, give it a star and follow the project:
 
 <p align="center">
-  <a href="https://ko-fi.com/liamzy" target="_blank" rel="noopener">
-    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="36" alt="Buy Me a Coffee at ko-fi.com" />
+  <a href="https://github.com/liamzy2021/Obsidian--Modular-Theme-Dashboard-Free-Drag-and-Drop" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/github/stars/liamzy2021/Obsidian--Modular-Theme-Dashboard-Free-Drag-and-Drop?style=social" alt="GitHub stars" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/liamzy2021" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/badge/⭐-Star_&_Follow-24292f?style=for-the-badge&logo=github" />
   </a>
 </p>
 
@@ -325,7 +329,7 @@ If you enjoy this plugin, you can buy me a coffee:
 
 > 一款自由拖拽的 Obsidian 仪表盘插件，内置 25 个功能模块、8 款精美主题、9+ 种文件查看器，以及 AI 驱动的多语言翻译——随心摆放，你的桌面你做主。
 
-**V17.1.1** — 两大重要更新：**PPT / PPT 文件查看器**（完整支持 `.ppt` 和 `.pptx` 格式，智能文本提取）和 **天气模块多平台国际化升级**（5 大平台：高德、Open-Meteo、wttr.in、OpenWeatherMap + 自定义 URL 模板）。覆盖全球天气数据，大部分平台免费无限使用。
+**V17** — 两大重要更新：**PPT / PPT 文件查看器**（完整支持 `.ppt` 和 `.pptx` 格式，智能文本提取）和 **天气模块多平台国际化升级**（5 大平台：高德、Open-Meteo、wttr.in、OpenWeatherMap + 自定义 URL 模板）。覆盖全球天气数据，大部分平台免费无限使用。
 
 ---
 

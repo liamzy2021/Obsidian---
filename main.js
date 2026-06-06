@@ -3,7 +3,7 @@
  * 底层：V14 自由拖拽/resize 布局 + 完全模块化架构
  * 功能：V11 完整功能迁移 + 无限实例化系统（所有模块默认可克隆）
  * 主题：V11 8个精美主题
- * 构建版本：17.1.2 (release)
+ * 构建版本：17.1.3 (release)
  */
 
 const { Plugin, ItemView, FileView, Setting, PluginSettingTab, Modal, Notice, setIcon, requestUrl, moment } = require('obsidian');
@@ -4248,7 +4248,7 @@ class DashboardSettingTab extends PluginSettingTab {
             attr: { style: 'text-align:center;margin-bottom:12px;' }
         });
 
-        // 三栏布局：爱发电（中文）| Ko-fi（国际）| 微信二维码（最后）
+        // 三栏布局：爱发电 | GitHub 项目 | 微信二维码
         const donateRow = section.createDiv({
             attr: {
                 style: 'display:flex;justify-content:center;align-items:stretch;gap:24px;flex-wrap:wrap;margin-top:8px;'
@@ -4282,30 +4282,29 @@ class DashboardSettingTab extends PluginSettingTab {
             }
         });
 
-        // 第二栏：国际打赏（Ko-fi）
-        const intlBox = donateRow.createDiv({
+        // 第二栏：GitHub 项目
+        const gitHubBox = donateRow.createDiv({
             attr: {
                 style: 'flex:0 0 auto;text-align:center;background:var(--background-secondary);border-radius:12px;padding:16px;border:1px solid var(--background-modifier-border);display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:200px;min-height:274px;'
             }
         });
-        intlBox.createEl('div', {
-            text: 'Ko-fi',
+        gitHubBox.createEl('div', {
+            text: 'GitHub',
             attr: { style: 'font-size:14px;font-weight:600;margin-bottom:10px;color:var(--text-normal);' }
         });
-        // Ko-fi logo
-        intlBox.createEl('img', {
+        // GitHub logo (inline SVG)
+        gitHubBox.createEl('span', {
             attr: {
-                src: 'https://storage.ko-fi.com/cdn/brandasset/v2/kofi_symbol.png',
-                style: 'width:120px;height:auto;object-fit:contain;margin-bottom:10px;'
+                style: 'font-size:48px;margin-bottom:10px;display:block;'
             }
-        });
-        intlBox.createEl('a', {
-            text: '☕ Buy me a coffee',
+        }).innerHTML = '<svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-normal);"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>';
+        gitHubBox.createEl('a', {
+            text: t('settings.donateGitHub'),
             attr: {
-                href: 'https://ko-fi.com/liamzy',
+                href: 'https://github.com/liamzy2021/Obsidian--Modular-Theme-Dashboard-Free-Drag-and-Drop',
                 target: '_blank',
                 rel: 'noopener',
-                style: 'display:inline-block;padding:10px 24px;background:#FF5E5B;color:#fff;border-radius:8px;text-decoration:none;font-size:15px;font-weight:600;cursor:pointer;'
+                style: 'display:inline-block;padding:10px 24px;background:#24292f;color:#fff;border-radius:8px;text-decoration:none;font-size:15px;font-weight:600;cursor:pointer;'
             }
         });
 
@@ -4488,6 +4487,7 @@ const I18N_DICT = {
     'settings.donateWeChat':           { zh: '🇨🇳 爱发电',             en: '🇨🇳 Afdian' },
     'settings.donateCoffee':           { zh: '☕ 请喝杯咖啡',          en: '☕ Buy me a coffee' },
     'settings.donateWeChatQR':         { zh: '🇨🇳 微信赞赏',          en: '🇨🇳 WeChat Tip' },
+    'settings.donateGitHub':           { zh: '⭐ 关注我的项目',       en: '⭐ Star & Follow' },
     'settings.qrLoadFailed':           { zh: '二维码加载失败',        en: 'QR code load failed' },
 
     // ===== 仪表盘视图 =====
