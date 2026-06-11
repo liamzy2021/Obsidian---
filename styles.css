@@ -516,7 +516,7 @@ body.theme-light {
 .dir-icon { font-size: 13px; }
 .dir-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .dir-count { font-size: 10px; color: var(--v6-muted); }
-.dir-children { display: none; }
+.dir-children { padding-left: 14px; }
 .dir-children.collapsed { display: none; }
 
 /* Weather */
